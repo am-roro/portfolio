@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Cyber - ROSA</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .veille-section-block {
+            background: rgba(10, 10, 18, 0.7);
+            border: 1px solid var(--accent-primary);
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
+        }
+
+        .veille-section-block h2 {
+            color: var(--accent-secondary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 1px dashed var(--accent-secondary);
+            padding-bottom: 10px;
+        }
+
+        .veille-section-block h3 {
+            color: var(--accent-primary);
+            font-size: 1.3rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-family: var(--font-mono);
+        }
+
+        .veille-section-block ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .veille-section-block ul li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .veille-section-block ul li::before {
+            content: ">>";
+            color: var(--accent-primary);
+            position: absolute;
+            left: -20px;
+            font-family: var(--font-mono);
+        }
+
+        .veille-link {
+            display: inline-block;
+            color: var(--accent-yellow);
+            text-decoration: underline;
+            margin-top: 10px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div class="noise"></div>
+
+    <nav class="brutal-nav">
+        <div class="logo-box"><a href="index.html">ROSA<span class="cursor-blink">_</span></a></div>
+        <a href="index.html#veille" class="btn btn-black"><i class="fas fa-arrow-left"></i> RETOUR</a>
+    </nav>
+
+    <main class="container section">
+        <header class="detail-header" style="margin-bottom: 50px; text-align: center;">
+            <span class="badge tag-alert" style="margin-bottom: 15px; display: inline-block;">SUJET CRITIQUE</span>
+            <h1 style="color: var(--white); text-shadow: var(--glow-primary); font-size: 4rem;">LA CYBERSÉCURITÉ DANS LE
+                CLOUD COMPUTING</h1>
+        </header>
+
+        <!-- 1 -->
+        <article class="veille-section-block">
+            <h2>1️⃣ Contexte et enjeux</h2>
+            <p>Le cloud computing repose sur des modèles de services IaaS, PaaS et SaaS, principalement fournis par des
+                acteurs majeurs comme Amazon Web Services, Microsoft Azure et Google Cloud.</p>
+            <p>La migration des infrastructures vers le cloud modifie profondément le périmètre de sécurité
+                traditionnel. On passe d’un modèle de sécurité périmétrique (on-premise) à un modèle basé sur :</p>
+            <ul>
+                <li>La responsabilité partagée (Shared Responsibility Model)</li>
+                <li>La gestion des identités (IAM)</li>
+                <li>La sécurisation des API</li>
+                <li>La supervision continue</li>
+            </ul>
+            <p>📌 <strong>Exemple : AWS Shared Responsibility Model</strong><br>
+                <a href="https://aws.amazon.com/compliance/shared-responsibility-model/" target="_blank"
+                    class="veille-link">https://aws.amazon.com/compliance/shared-responsibility-model/</a>
+            </p>
+        </article>
+
+        <!-- 2 -->
+        <article class="veille-section-block">
+            <h2>2️⃣ Principales menaces identifiées (2024–2026)</h2>
+            <p>Selon les rapports de sécurité et les recommandations de l’ANSSI :</p>
+            <h3>🔎 1. Mauvaise configuration des services cloud</h3>
+            <ul>
+                <li>Buckets S3 publics</li>
+                <li>Mauvaise gestion des règles de sécurité réseau (Security Groups)</li>
+                <li>Permissions IAM trop larges</li>
+            </ul>
+            <h3>🔎 2. Compromission d’identifiants</h3>
+            <ul>
+                <li>Attaques par phishing</li>
+                <li>Credential stuffing</li>
+                <li>Absence de MFA</li>
+            </ul>
+            <h3>🔎 3. Attaques sur les API</h3>
+            <ul>
+                <li>Exploitation de failles OWASP API Top 10</li>
+                <li>Manque d’authentification forte</li>
+            </ul>
+            <h3>🔎 4. Ransomware en environnement cloud hybride</h3>
+            <h3>🔎 5. Shadow IT</h3>
+
+            <p style="margin-top: 20px;"><strong>📚 Références :</strong></p>
+            <a href="https://www.ssi.gouv.fr" target="_blank" class="veille-link">Rapport ANSSI :
+                https://www.ssi.gouv.fr</a><br>
+            <a href="https://owasp.org/www-project-api-security/" target="_blank" class="veille-link">OWASP API Security
+                : https://owasp.org/www-project-api-security/</a>
+        </article>
+
+        <!-- 3 -->
+        <article class="veille-section-block">
+            <h2>3️⃣ Cadres normatifs et réglementaires</h2>
+            <p>La cybersécurité cloud s’appuie sur plusieurs référentiels :</p>
+            <ul>
+                <li>RGPD (protection des données)</li>
+                <li>ISO/IEC 27001</li>
+                <li>ISO/IEC 27017 (sécurité cloud)</li>
+                <li>ISO/IEC 27018 (protection des données personnelles dans le cloud)</li>
+                <li>NIST Cloud Security Framework</li>
+            </ul>
+            <p style="margin-top: 20px;"><strong>📚 Ressources :</strong></p>
+            <a href="https://www.cnil.fr" target="_blank" class="veille-link">CNIL (RGPD) : https://www.cnil.fr</a><br>
+            <a href="https://csrc.nist.gov/projects/cloud-computing" target="_blank" class="veille-link">NIST Cloud
+                Computing : https://csrc.nist.gov/projects/cloud-computing</a>
+        </article>
+
+        <!-- 4 -->
+        <article class="veille-section-block">
+            <h2>4️⃣ Bonnes pratiques techniques</h2>
+            <h3>🔐 1. IAM (Identity & Access Management)</h3>
+            <ul>
+                <li>Principe du moindre privilège</li>
+                <li>RBAC (Role-Based Access Control)</li>
+                <li>Rotation des clés d’accès</li>
+                <li>MFA obligatoire</li>
+            </ul>
+            <h3>🔐 2. Chiffrement</h3>
+            <ul>
+                <li>TLS 1.2 / 1.3 pour les données en transit</li>
+                <li>AES-256 pour les données au repos</li>
+                <li>Gestion sécurisée des clés (KMS)</li>
+            </ul>
+            <h3>🔐 3. Modèle Zero Trust</h3>
+            <ul>
+                <li>Vérification continue</li>
+                <li>Segmentation réseau</li>
+                <li>Authentification forte</li>
+            </ul>
+            <h3>🔐 4. Supervision et détection</h3>
+            <ul>
+                <li>SIEM (Security Information and Event Management)</li>
+                <li>SOC (Security Operations Center)</li>
+                <li>Solutions XDR/EDR</li>
+            </ul>
+        </article>
+
+        <!-- 5 -->
+        <article class="veille-section-block">
+            <h2>5️⃣ Outils et solutions étudiés</h2>
+            <h3>☁️ Sécurité native Cloud</h3>
+            <ul>
+                <li>AWS Security Hub</li>
+                <li>Microsoft Defender for Cloud</li>
+                <li>Google Security Command Center</li>
+            </ul>
+            <h3>🔍 Outils complémentaires</h3>
+            <ul>
+                <li>CASB (Cloud Access Security Broker)</li>
+                <li>WAF (Web Application Firewall)</li>
+                <li>IDS/IPS cloud</li>
+                <li>Outils d’audit de configuration (CSPM)</li>
+            </ul>
+        </article>
+
+        <!-- 6 -->
+        <article class="veille-section-block">
+            <h2>6️⃣ Méthodologie de veille</h2>
+            <p>Pour assurer une veille efficace, j’utilise :</p>
+            <ul>
+                <li>Publications officielles de l’ANSSI</li>
+                <li>Blogs sécurité AWS, Azure, Google Cloud</li>
+                <li>OWASP</li>
+                <li>Feedly (agrégateur RSS)</li>
+                <li>LinkedIn (experts cybersécurité)</li>
+                <li>Conférences (FIC, Black Hat, etc.)</li>
+            </ul>
+        </article>
+
+        <!-- 7 -->
+        <article class="veille-section-block">
+            <h2>7️⃣ Analyse personnelle</h2>
+            <p>La tendance actuelle montre un basculement vers :</p>
+            <ul>
+                <li>Le modèle Zero Trust</li>
+                <li>L’automatisation de la sécurité (DevSecOps)</li>
+                <li>La détection basée sur l’IA</li>
+                <li>La sécurisation des environnements multi-cloud</li>
+            </ul>
+            <p>La cybersécurité cloud devient une compétence stratégique pour les administrateurs systèmes et les
+                ingénieurs cybersécurité.</p>
+
+            <div
+                style="margin-top: 30px; padding: 20px; background: rgba(0, 255, 102, 0.1); border-left: 4px solid var(--accent-green);">
+                <h3 style="color: var(--accent-green); margin-top: 0;">🎓 Compétences développées grâce à cette veille
+                </h3>
+                <ul>
+                    <li>Analyse des risques cloud</li>
+                    <li>Compréhension du modèle de responsabilité partagée</li>
+                    <li>Maîtrise des concepts IAM et chiffrement</li>
+                    <li>Connaissance des normes ISO et RGPD</li>
+                    <li>Veille stratégique et technologique structurée</li>
+                </ul>
+            </div>
+        </article>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="index.html#veille" class="btn btn-yellow"><i class="fas fa-home"></i> RETOUR AU PORTFOLIO</a>
+        </div>
+    </main>
+
+    <footer class="brutal-footer">
+        <div class="container">
+            <p>ROSA © 2026</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
