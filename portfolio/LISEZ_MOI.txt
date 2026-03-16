@@ -1,0 +1,21 @@
+# Portfolio - Version Finale (Contenu Réel)
+
+Votre portfolio est maintenant complet avec vos vraies informations et projets, toujours dans le style **Neo-Brutalist "Authentic"**.
+
+## 🚀 Derniers détails à régler
+Pour que les boutons de téléchargement fonctionnent, vous devez ajouter deux fichiers dans ce dossier :
+1.  **`cv.pdf`** : Votre CV.
+2.  **`tableau_synthese.pdf`** : Votre tableau de compétences E5.
+
+## 📝 Contenu Intégré
+- **Projets** : 
+    - TALKitOUT (Technovation, React Native)
+    - PharmaSi (C#, MySQL)
+    - SuperMarché (PHP)
+    - Jeu de la Cible (HTML/JS)
+- **Expérience** : Frutomatik, Aminum, Technovation.
+- **Formation** : Lycée Louis Armand.
+- **Veille** : Cybersécurité Cloud.
+
+## 🎨 Modification
+Tout le contenu texte se trouve dans `index.html`.
