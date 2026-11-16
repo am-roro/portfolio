@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracker Jobs Data & IA - Rosa Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">ROSA.</a>
+        </div>
+        <a href="index.html#projects" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Retour aux projets</a>
+    </nav>
+
+    <main class="container section">
+        <article class="card" style="padding: 0; overflow: hidden; border: none; background: transparent;">
+            
+            <header style="margin-bottom: 40px;">
+                <span class="badge">PROJET PHARE - DATA ENGINEERING & BI</span>
+                <h1 class="main-title" style="font-size: 3rem; margin-bottom: 16px;">Data/IA Jobs Tracker</h1>
+                
+                <div class="tags" style="margin-bottom: 24px;">
+                    <span>Python (Pandas / NumPy)</span>
+                    <span>BeautifulSoup (Scraping)</span>
+                    <span>Power BI Desktop</span>
+                    <span>Chart.js & JS</span>
+                </div>
+                
+                <p class="hero-desc">
+                    Un <strong>pipeline ETL complet de données</strong> conçu pour analyser en temps réel le marché de l'emploi en Data et en Intelligence Artificielle en France. Le projet intègre de la collecte de données, du nettoyage de données complexes et une double visualisation (Dashboard Web & Power BI).
+                </p>
+            </header>
+
+            <div class="grid-2-cols" style="gap: 40px; align-items: start; margin-bottom: 60px;">
+                <!-- Left: Details -->
+                <div class="text-body" style="background: var(--bg-light); padding: 32px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--text-primary);">Architecture & Pipeline de Données</h2>
+                    
+                    <ul style="margin-top: 16px; margin-bottom: 24px; padding-left: 20px; color: var(--text-secondary);">
+                        <li style="margin-bottom: 12px;"><strong>Collecte (Scraping - collect.py) :</strong> Script d'extraction automatisé des offres via BeautifulSoup (scraping HTML). Intègre un moteur de génération réaliste (1200+ offres) en cas de blocage CORS/sécurité.</li>
+                        <li style="margin-bottom: 12px;"><strong>Nettoyage & Agrégation (analyze.py) :</strong> Pipeline utilisant <strong>Pandas</strong> et <strong>NumPy</strong>. Standardisation des salaires (gestion des TJM, salaires bruts annuels et mensuels), extraction automatique des mots-clés de technologies (Python, SQL, PyTorch, Docker...), nettoyage des localisations et exports structurés.</li>
+                        <li style="margin-bottom: 12px;"><strong>Fichiers de Sortie :</strong> Export de <code>cleaned_jobs.csv</code> pour le reporting décisionnel, et injection directe dans <code>dashboard_data.js</code> pour alimenter le dashboard web sans requérir de backend de base de données.</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--text-primary);">Visualisations & Rapports</h2>
+                    <div class="info-box" style="margin: 0;">
+                        Le projet met en œuvre deux méthodes complémentaires de mise en valeur des données :
+                        <ul style="margin-top:10px;">
+                            <li><strong>Dashboard Web Interactif :</strong> Interface dynamique en Chart.js permettant de filtrer instantanément par Ville, Rôle et Contrat avec recalcul instantané des KPIs (Moyenne de salaire brut, offres totales, technologies clés).</li>
+                            <li><strong>Tableau de bord Power BI :</strong> Guide de conception pour modéliser le fichier CSV extrait sous Power BI Desktop afin d'analyser l'attractivité géographique et salariale en entreprise.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right: Demo Links & Visuals -->
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <div class="card" style="padding: 24px; background: rgba(59, 130, 246, 0.05); border-color: var(--accent-color);">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 16px; color: var(--text-primary);"><i class="fas fa-play"></i> Démo & Fichiers</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 20px;">
+                            Accédez directement au tableau de bord dynamique et aux jeux de données générés par le pipeline Python :
+                        </p>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <a href="analyse_marche_emploi_data/index.html" target="_blank" class="btn btn-primary" style="justify-content: center; width: 100%;">
+                                <i class="fas fa-chart-pie"></i> Ouvrir le Dashboard Web
+                            </a>
+                            <a href="analyse_marche_emploi_data/cleaned_jobs.csv" target="_blank" class="btn btn-outline" style="justify-content: center; width: 100%;">
+                                <i class="fas fa-file-csv"></i> Télécharger cleaned_jobs.csv
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <img src="images/project_market_jobs.png" alt="Data/IA Jobs Tracker" onerror="this.src='https://via.placeholder.com/600x400/1f2937/f9fafb?text=Dashboard+Data+Jobs+Tracker'" style="width: 100%; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Rosa | Lycée Louis Armand - Paris 15</p>
+        </div>
+    </footer>
+</body>
+</html>
