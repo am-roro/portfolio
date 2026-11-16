@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROSA_A — Portfolio BTS SIO SLAM</title>
+    <meta name="description" content="Portfolio de Rosa Amokrane — Data Analyst & Développeuse.">
+
+    <!-- Google Fonts: Orbitron + Rajdhani (style gaming comme Tina HUYNH) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CRT Effects -->
+    <div class="crt-overlay"></div>
+    <div class="scanline"></div>
+
+    <!-- Navigation HUD -->
+    <nav class="hud-nav">
+        <div class="logo">ROSA_A</div>
+        <ul class="menu">
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#about">Profil</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#experience">Expérience</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#veille">Veille</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </nav>
+
+    <main>
+
+        <!-- ===== HERO ===== -->
+        <section id="hero" class="screen">
+            <div class="hero-content">
+                <span class="glitch" data-text="ROSA AMOKRANE">ROSA AMOKRANE</span>
+                <p class="hero-subtitle">Diplômée BTS SIO SLAM — Développeuse Web &amp; Logiciel</p>
+                <p class="hero-desc">
+                    Diplômée en BTS SIO (Solutions Logicielles et Applications Métiers) avec de solides compétences en développement full-stack, modélisation de bases de données relationnelles et assurance qualité logicielle (QA).
+                </p>
+                <p class="status">SYSTEM: ONLINE_</p>
+                <a href="#about" class="btn-start">Initialiser le profil</a>
+            </div>
+        </section>
+
+        <!-- ===== PROFIL ===== -->
+        <section id="about" class="screen">
+            <h2 class="section-title"><span class="icon">&#9654;</span> Profil</h2>
+            <div class="stats-container">
+                <div class="avatar-box">
+                    <div class="placeholder-avatar" style="display:block;"></div>
+                    <div class="level-badge">DIPLÔMÉE BTS SIO</div>
+                </div>
+                <div class="bio-box">
+                    <h3>Présentation</h3>
+                    <p>&gt; <strong>Nom :</strong> Rosa Amokrane</p>
+                    <p>&gt; <strong>Diplôme :</strong> BTS SIO — Option SLAM (Obtenu)</p>
+                    <div class="presentation-text">
+                        <p>
+                            Je me présente, c'est Rosa. Titulaire d'un BTS SIO (Services Informatiques aux
+                            Organisations) option SLAM (Solutions Logicielles et Applications Métier).
+                        </p>
+                        <p>
+                            Sur ce portfolio, vous retrouverez mes différentes expériences professionnelles, mes projets
+                            réalisés ainsi que ma veille technologique.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== COMPÉTENCES ===== -->
+        <section id="skills">
+            <h2 class="section-title"><span class="icon">&#9654;</span> Compétences</h2>
+            <div class="skills-container">
+                <div class="skills-grid">
+                    <!-- Data & IA -->
+                    <div class="skill-category">
+                        <h3>&gt; Data &amp; IA</h3>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>Python</span><span>75%</span></div>
+                            <div class="skill-bar"><div class="fill fill-cyan" style="width:75%"></div></div>
+                        </div>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>Jupyter / Colab</span><span>70%</span></div>
+                            <div class="skill-bar"><div class="fill fill-cyan" style="width:70%"></div></div>
+                        </div>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>Data Cleaning</span><span>65%</span></div>
+                            <div class="skill-bar"><div class="fill fill-cyan" style="width:65%"></div></div>
+                        </div>
+                    </div>
+                    <!-- Bases de données -->
+                    <div class="skill-category">
+                        <h3>&gt; Bases de données</h3>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>SQL / MySQL</span><span>80%</span></div>
+                            <div class="skill-bar"><div class="fill fill-purple" style="width:80%"></div></div>
+                        </div>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>Firebase</span><span>70%</span></div>
+                            <div class="skill-bar"><div class="fill fill-purple" style="width:70%"></div></div>
+                        </div>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>MariaDB</span><span>60%</span></div>
+                            <div class="skill-bar"><div class="fill fill-purple" style="width:60%"></div></div>
+                        </div>
+                    </div>
+                    <!-- Front-end -->
+                    <div class="skill-category">
+                        <h3>&gt; Front-end</h3>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>HTML5 / CSS3</span><span>85%</span></div>
+                            <div class="skill-bar"><div class="fill fill-green" style="width:85%"></div></div>
+                        </div>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>JavaScript</span><span>70%</span></div>
+                            <div class="skill-bar"><div class="fill fill-green" style="width:70%"></div></div>
+                        </div>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>React</span><span>60%</span></div>
+                            <div class="skill-bar"><div class="fill fill-green" style="width:60%"></div></div>
+                        </div>
+                    </div>
+                    <!-- Back-end -->
+                    <div class="skill-category">
+                        <h3>&gt; Back-end</h3>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>PHP</span><span>70%</span></div>
+                            <div class="skill-bar"><div class="fill fill-cyan" style="width:70%"></div></div>
+                        </div>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>Node.js</span><span>60%</span></div>
+                            <div class="skill-bar"><div class="fill fill-cyan" style="width:60%"></div></div>
+                        </div>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>C#</span><span>65%</span></div>
+                            <div class="skill-bar"><div class="fill fill-cyan" style="width:65%"></div></div>
+                        </div>
+                    </div>
+                    <!-- Outils -->
+                    <div class="skill-category">
+                        <h3>&gt; Outils &amp; API</h3>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>Git / GitHub</span><span>75%</span></div>
+                            <div class="skill-bar"><div class="fill fill-purple" style="width:75%"></div></div>
+                        </div>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>WordPress / Odoo</span><span>65%</span></div>
+                            <div class="skill-bar"><div class="fill fill-purple" style="width:65%"></div></div>
+                        </div>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>VS Code</span><span>90%</span></div>
+                            <div class="skill-bar"><div class="fill fill-purple" style="width:90%"></div></div>
+                        </div>
+                    </div>
+                    <!-- Qualité & Systèmes -->
+                    <div class="skill-category">
+                        <h3>&gt; Qualité &amp; Systèmes</h3>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>Tests QA</span><span>80%</span></div>
+                            <div class="skill-bar"><div class="fill fill-green" style="width:80%"></div></div>
+                        </div>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>Linux</span><span>60%</span></div>
+                            <div class="skill-bar"><div class="fill fill-green" style="width:60%"></div></div>
+                        </div>
+                        <div class="skill-bar-container hidden">
+                            <div class="skill-label"><span>Active Directory</span><span>55%</span></div>
+                            <div class="skill-bar"><div class="fill fill-green" style="width:55%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="softskills-box hidden">
+                    <h3>&gt; Soft Skills</h3>
+                    <ul class="softskills-list">
+                        <li><strong>Rigueur :</strong> tests fonctionnels et signalement de bugs chez Avatar Medical.</li>
+                        <li><strong>Autonomie :</strong> développement de l'espace franchisé React + Firebase chez Frutomatik.</li>
+                        <li><strong>Adaptabilité :</strong> expériences en développement web, QA logiciels et support informatique.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EXPÉRIENCE ===== -->
+        <section id="experience">
+            <h2 class="section-title"><span class="icon">&#9654;</span> Expérience</h2>
+            <div class="timeline-container">
+                <div class="timeline">
+
+                    <div class="timeline-item hidden">
+                        <a href="stage_frutomatik.html" class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="timeline-company">Frutomatik</span>
+                                <span class="timeline-date">Déc 2025 — Fév 2026</span>
+                            </div>
+                            <p class="timeline-role">Développeuse Web (Stage)</p>
+                            <p class="timeline-desc">Développement d'un espace franchisé full-stack avec React et Firebase. Gestion d'un site WordPress et d'un sous-domaine Odoo.</p>
+                            <p class="timeline-link-hint">&gt; Voir la fiche détaillée →</p>
+                        </a>
+                    </div>
+
+                    <div class="timeline-item hidden">
+                        <a href="stage_avatar.html" class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="timeline-company">Avatar Medical</span>
+                                <span class="timeline-date">Mai 2025 — Juil 2025</span>
+                            </div>
+                            <p class="timeline-role">Testeuse QA Logiciels (Stage)</p>
+                            <p class="timeline-desc">Réalisation de tests fonctionnels et signalisation des bugs sur un logiciel 3D. Configuration des postes informatiques.</p>
+                            <p class="timeline-link-hint">&gt; Voir la fiche détaillée →</p>
+                        </a>
+                    </div>
+
+                    <div class="timeline-item hidden">
+                        <a href="stage_avatar.html" class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="timeline-company">Avatar Medical</span>
+                                <span class="timeline-date">Avr 2024 — Mai 2024</span>
+                            </div>
+                            <p class="timeline-role">Testeuse QA Logiciels (Stage)</p>
+                            <p class="timeline-desc">Analyse et tests des logiciels d'imagerie médicale.</p>
+                            <p class="timeline-link-hint">&gt; Voir la fiche détaillée →</p>
+                        </a>
+                    </div>
+
+                    <div class="timeline-item hidden">
+                        <a href="stage_prefecture.html" class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="timeline-company">Nanterre-Préfecture</span>
+                                <span class="timeline-date">Mai 2023 — Juin 2023</span>
+                            </div>
+                            <p class="timeline-role">Technicien Informatique (Stage)</p>
+                            <p class="timeline-desc">Gestion d'un parc informatique et administration Active Directory.</p>
+                            <p class="timeline-link-hint">&gt; Voir la fiche détaillée →</p>
+                        </a>
+                    </div>
+
+                    <div class="timeline-item hidden">
+                        <a href="stage_aminum.html" class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="timeline-company">Aminum</span>
+                                <span class="timeline-date">Janv 2023 — Fév 2023</span>
+                            </div>
+                            <p class="timeline-role">Développeuse (Stage)</p>
+                            <p class="timeline-desc">Création d'un environnement Linux et programmation en HTML.</p>
+                            <p class="timeline-link-hint">&gt; Voir la fiche détaillée →</p>
+                        </a>
+                    </div>
+
+                    <div class="timeline-item hidden">
+                        <a href="stage_axians.html" class="timeline-card">
+                            <div class="timeline-header">
+                                <span class="timeline-company">Axians</span>
+                                <span class="timeline-date">Janv 2022 — Fév 2022</span>
+                            </div>
+                            <p class="timeline-role">Développeuse (Stage)</p>
+                            <p class="timeline-desc">Programmation en HTML et découverte de plusieurs langages.</p>
+                            <p class="timeline-link-hint">&gt; Voir la fiche détaillée →</p>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJETS ===== -->
+        <section id="projects">
+            <h2 class="section-title"><span class="icon">&#9654;</span> Projets</h2>
+            <div class="quest-log-container">
+
+                <!-- Supermarché -->
+                <div class="quest-card hidden">
+                    <div class="quest-header">
+                        <span class="quest-status">[COMPLÉTÉ]</span>
+                        <h4>Supermarché en Ligne</h4>
+                    </div>
+                    <div class="quest-body-with-img">
+                        <div class="quest-img-wrapper quest-img-gallery" data-gallery="supermarche">
+                            <img src="images/supermarche/market1.png" alt="Supermarché 1" class="quest-img active-slide">
+                            <img src="images/supermarche/accueil.png" alt="Supermarché Accueil" class="quest-img">
+                            <img src="images/supermarche/BDD.png" alt="Supermarché BDD" class="quest-img">
+                            <img src="images/supermarche/facture.png" alt="Supermarché Facture" class="quest-img">
+                            <div class="gallery-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="quest-body">
+                            <p>Plateforme e-commerce avec module d'analyse des ventes, extraction MySQL et calcul automatisé des remises financières.</p>
+                            <div class="tech-tags"><span>PHP</span><span>MySQL</span><span>Statistiques de Ventes</span></div>
+                            <a href="project_market.html" class="btn-quest">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PharmaSI -->
+                <div class="quest-card hidden">
+                    <div class="quest-header">
+                        <span class="quest-status">[COMPLÉTÉ]</span>
+                        <h4>PharmaSI</h4>
+                    </div>
+                    <div class="quest-body-with-img">
+                        <div class="quest-img-wrapper quest-img-gallery" data-gallery="pharmasi">
+                            <img src="images/pharmasi/pharmasi1.png" alt="PharmaSI 1" class="quest-img active-slide">
+                            <img src="images/pharmasi/pharmasi2.png" alt="PharmaSI 2" class="quest-img">
+                            <img src="images/pharmasi/pharmasi3.png" alt="PharmaSI 3" class="quest-img">
+                            <img src="images/pharmasi/pharmasi4.png" alt="PharmaSI 4" class="quest-img">
+                            <div class="gallery-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="quest-body">
+                            <p>Système de reporting médical, modélisation de base de données MySQL et conception de requêtes analytiques complexes.</p>
+                            <div class="tech-tags"><span>C#</span><span>MySQL</span><span>Modélisation Relationnelle</span></div>
+                            <a href="project_pharmasi.html" class="btn-quest">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technovation -->
+                <div class="quest-card hidden">
+                    <div class="quest-header">
+                        <span class="quest-status">[COMPLÉTÉ]</span>
+                        <h4>Technovation Girls — TALKitOUT</h4>
+                    </div>
+                    <div class="quest-body-with-img">
+                        <div class="quest-img-wrapper">
+                            <img src="images/TALKitOUT/TALKitOUT.png" alt="TALKitOUT App" class="quest-img" onerror="this.src='images/project_1.png'">
+                        </div>
+                        <div class="quest-body">
+                            <p>Application mobile d'utilité communautaire conçue et développée de bout en bout sous la plateforme de prototypage Thunkable.</p>
+                            <div class="tech-tags"><span>Thunkable</span><span>Applications Mobiles</span><span>Gestion de Projet</span></div>
+                            <a href="project_talkitout.html" class="btn-quest">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet Cible -->
+                <div class="quest-card hidden">
+                    <div class="quest-header">
+                        <span class="quest-status">[COMPLÉTÉ]</span>
+                        <h4>Projet Cible</h4>
+                    </div>
+                    <div class="quest-body-with-img">
+                        <div class="quest-img-wrapper">
+                            <img src="images/cible/cible .png" alt="Projet Cible" class="quest-img" onerror="this.src='images/project_4.png'">
+                        </div>
+                        <div class="quest-body">
+                            <p>Projet de développement d'une application de gestion de cibles. Conception, développement et tests.</p>
+                            <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <a href="project_cible.html" class="btn-quest">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== VEILLE TECHNOLOGIQUE ===== -->
+        <section id="veille" class="screen">
+            <h2 class="section-title"><span class="icon">&#9654;</span> Veille Technologique</h2>
+            <div class="veille-container">
+                <div class="veille-intro hidden">
+                    <p>&gt; <strong>Sujet :</strong> Le MLOps &amp; LLMOps — L'industrialisation de l'Intelligence Artificielle</p>
+                    <p>&gt; <strong>Sources :</strong> Dev.to &amp; Google Alerts — Articles mis à jour automatiquement</p>
+                    <p style="margin-top:0.8rem;">&gt; <a href="veille_ia.html" style="color:var(--neon-purple);">Consulter le dossier complet →</a></p>
+                </div>
+                <div class="veille-filters">
+                    <button class="veille-tag active" data-tag="ai">🤖 IA</button>
+                    <button class="veille-tag" data-tag="webdev">🌐 Web Dev</button>
+                    <button class="veille-tag" data-tag="cybersecurity">🔒 Cybersécurité</button>
+                    <button class="veille-tag" data-tag="programming">💻 Programmation</button>
+                </div>
+                <div class="news-grid" id="veille-grid">
+                    <div class="news-card loading-card">
+                        <div class="news-date">SCANNING...</div>
+                        <h4>Récupération des données...</h4>
+                        <p>Connexion aux flux en cours...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="contact" class="screen">
+            <h2 class="section-title"><span class="icon">&#9654;</span> Contact</h2>
+            <div class="chat-interface">
+                <div class="chat-log">
+                    <p class="system-msg">&gt; ROSA_A est disponible pour une alternance.</p>
+                    <p class="system-msg">&gt; Envoyer un message ci-dessous.</p>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="username">Nom :</label>
+                        <input type="text" id="username" name="username" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message :</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tapez votre message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-send">Envoyer</button>
+                </form>
+
+                <div style="margin-top:2rem; text-align:center;">
+                    <a href="https://www.linkedin.com/in/rosa-amokrane" target="_blank" class="btn-cv" style="margin:0.3rem;">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="mailto:amokranerosa123@gmail.com" class="btn-cv" style="margin:0.3rem;">
+                        <i class="fas fa-envelope"></i> Email direct
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>ROSA AMOKRANE — BTS SIO SLAM 2026 // Paris School of Technology &amp; Business</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille MLOps & LLMOps - ROSA</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .veille-section-block {
+            background: rgba(10, 10, 18, 0.7);
+            border: 1px solid var(--accent-primary);
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
+        }
+
+        .veille-section-block h2 {
+            color: var(--accent-secondary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 1px dashed var(--accent-secondary);
+            padding-bottom: 10px;
+        }
+
+        .veille-section-block h3 {
+            color: var(--accent-primary);
+            font-size: 1.3rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-family: var(--font-mono);
+        }
+
+        .veille-section-block ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .veille-section-block ul li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .veille-section-block ul li::before {
+            content: ">>";
+            color: var(--accent-primary);
+            position: absolute;
+            left: -20px;
+            font-family: var(--font-mono);
+        }
+
+        .veille-link {
+            display: inline-block;
+            color: var(--accent-yellow);
+            text-decoration: underline;
+            margin-top: 10px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <div class="noise"></div>
+
+    <nav class="brutal-nav">
+        <div class="logo-box"><a href="index.html">ROSA<span class="cursor-blink">_</span></a></div>
+        <a href="index.html#veille" class="btn btn-black"><i class="fas fa-arrow-left"></i> RETOUR</a>
+    </nav>
+
+    <main class="container section">
+        <header class="detail-header" style="margin-bottom: 50px; text-align: center;">
+            <span class="badge tag-alert" style="margin-bottom: 15px; display: inline-block;">SUJET STRATÉGIQUE</span>
+            <h1 style="color: var(--white); text-shadow: var(--glow-primary); font-size: 4rem;">MLOPS & LLMOPS : INDUSTRIALISATION DE L'IA</h1>
+        </header>
+
+        <!-- 1 -->
+        <article class="veille-section-block">
+            <h2>1️⃣ Contexte et enjeux</h2>
+            <p>Le passage d'un modèle d'Intelligence Artificielle développé localement (sur Jupyter Notebook) à un service robuste et disponible en production représente un défi majeur pour les organisations.</p>
+            <p>Le <strong>MLOps</strong> (Machine Learning Operations) et le <strong>LLMOps</strong> (Large Language Model Operations) unifient le développement (Dev), l'ingénierie de données (Data) et l'exploitation des systèmes (Ops) pour automatiser et fiabiliser le cycle de vie des modèles d'IA.</p>
+            <ul>
+                <li>Automatisation des pipelines de données (ETL)</li>
+                <li>Versioning conjoint des données, du code et des modèles</li>
+                <li>Déploiement continu et inférence scalable</li>
+                <li>Supervision des métriques d'IA et de dérives de données</li>
+            </ul>
+        </article>
+
+        <!-- 2 -->
+        <article class="veille-section-block">
+            <h2>2️⃣ Principaux défis identifiés (2024–2026)</h2>
+            <p>Selon les publications de référence (Google Cloud, McKinsey AI) :</p>
+            <h3>🔎 1. Dérive des données et des concepts (Data Drift)</h3>
+            <ul>
+                <li>Changement dans la distribution des données réelles par rapport aux données d'entraînement.</li>
+                <li>Perte graduelle de précision du modèle en conditions réelles.</li>
+            </ul>
+            <h3>🔎 2. Coût et latence des LLM (Large Language Models)</h3>
+            <ul>
+                <li>Gestion de la mémoire et des cartes GPU.</li>
+                <li>Optimisation des temps de réponse (TTFT) et coût des tokens via le cache sémantique et le Fine-tuning local.</li>
+            </ul>
+            <h3>🔎 3. Vulnérabilités de sécurité propres à l'IA</h3>
+            <ul>
+                <li>Injections de prompts (Prompt Injection) manipulant la logique des LLM.</li>
+                <li>Empoisonnement des données d'entraînement et fuite d'informations sensibles (Data Leakage).</li>
+            </ul>
+            <p style="margin-top: 20px;"><strong>📚 Références :</strong></p>
+            <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights" target="_blank" class="veille-link">McKinsey QuantumBlack : Insights sur l'IA</a><br>
+            <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" target="_blank" class="veille-link">OWASP LLM Top 10 Security Risks</a>
+        </article>
+
+        <!-- 3 -->
+        <article class="veille-section-block">
+            <h2>3️⃣ Cadres réglementaires et éthiques</h2>
+            <p>Le déploiement des modèles d'IA s'inscrit dans un cadre légal de plus en plus strict :</p>
+            <ul>
+                <li><strong>EU AI Act :</strong> Réglementation européenne classant les systèmes d'IA selon leur niveau de risque et imposant des audits stricts pour les modèles à haut risque.</li>
+                <li><strong>RGPD :</strong> Exigences sur l'explicabilité des décisions prises par IA et le droit d'opposition à la modélisation automatisée.</li>
+                <li><strong>Gouvernance des données :</strong> Nécessité d'assurer la traçabilité des données d'entraînement pour prouver le respect des droits d'auteur.</li>
+            </ul>
+        </article>
+
+        <!-- 4 -->
+        <article class="veille-section-block">
+            <h2>4️⃣ Bonnes pratiques techniques</h2>
+            <h3>⚙️ 1. Pipelines de données reproductibles</h3>
+            <ul>
+                <li>Utilisation d'orchestrateurs de tâches pour garantir la reproductibilité des étapes de nettoyage et d'ingénierie de caractéristiques.</li>
+            </ul>
+            <h3>🔄 2. CI/CD appliqué au Machine Learning (CD4ML)</h3>
+            <ul>
+                <li>Déclenchement automatique de tests d'évaluation et de ré-entraînement dès qu'une nouvelle version de données ou de modèle est soumise.</li>
+            </ul>
+            <h3>📊 3. Monitoring en temps réel</h3>
+            <ul>
+                <li>Mise en place de tableaux de bord pour surveiller le taux de requêtes, le temps de réponse et la dérive des prédictions.</li>
+            </ul>
+        </article>
+
+        <!-- 5 -->
+        <article class="veille-section-block">
+            <h2>5️⃣ Outils et solutions étudiés</h2>
+            <h3>🛠️ Cycle de vie & Tracking</h3>
+            <ul>
+                <li><strong>MLflow :</strong> Outil open-source pour le tracking d'expériences, la reproductibilité des projets et la centralisation des modèles.</li>
+                <li><strong>Weights & Biases (W&B) :</strong> Visualisation interactive des entraînements.</li>
+                <li><strong>DVC (Data Version Control) :</strong> Versionnage des jeux de données volumineux via Git.</li>
+            </ul>
+            <h3>🚀 Inférence & Serveurs</h3>
+            <ul>
+                <li><strong>vLLM & Hugging Face TGI :</strong> Moteurs d'inférence ultra-rapides optimisant la mémoire GPU.</li>
+                <li><strong>LangChain & LlamaIndex :</strong> Frameworks pour l'intégration de données externes (RAG) avec les LLM.</li>
+            </ul>
+        </article>
+
+        <!-- 6 -->
+        <article class="veille-section-block">
+            <h2>6️⃣ Méthodologie de veille</h2>
+            <p>Pour suivre l'actualité de ce domaine en constante évolution :</p>
+            <ul>
+                <li>Abonnements aux newsletters spécialisées (TLDR AI, MLOps Community, Towards Data Science).</li>
+                <li>Flux RSS ciblés via des agrégateurs (Feedly) sur les mots-clés : MLOps, LLMOps, Data Drift.</li>
+                <li>Veille active sur les repositories open-source (GitHub Trends, Hugging Face Papers).</li>
+                <li>Participation à des webinaires et conférences techniques en ligne.</li>
+            </ul>
+        </article>
+
+        <!-- 7 -->
+        <article class="veille-section-block">
+            <h2>7️⃣ Analyse personnelle et compétences développées</h2>
+            <p>La tendance actuelle montre que l'industrialisation est le principal goulot d'étranglement des projets d'intelligence artificielle en entreprise. Le MLOps et le LLMOps sont devenus indispensables pour transformer des prototypes d'IA en outils créateurs de valeur pérenne.</p>
+            
+            <div style="margin-top: 30px; padding: 20px; background: rgba(0, 255, 102, 0.1); border-left: 4px solid var(--accent-green);">
+                <h3 style="color: var(--accent-green); margin-top: 0;">🎓 Compétences développées grâce à cette veille</h3>
+                <ul>
+                    <li>Compréhension fine des cycles de vie des projets de Data Science.</li>
+                    <li>Sensibilisation aux contraintes de production (coûts GPU, temps de calcul, sécurité).</li>
+                    <li>Connaissance des méthodologies de versionnage de données (DVC) et de modèles (MLflow).</li>
+                    <li>Analyse critique des cadres éthiques et juridiques (EU AI Act).</li>
+                </ul>
+            </div>
+        </article>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="index.html#veille" class="btn btn-yellow"><i class="fas fa-home"></i> RETOUR AU PORTFOLIO</a>
+        </div>
+    </main>
+
+    <footer class="brutal-footer">
+        <div class="container">
+            <p>ROSA © 2026</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

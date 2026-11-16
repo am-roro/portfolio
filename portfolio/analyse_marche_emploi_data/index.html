@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Analyse du Marché Emploi Data/IA</title>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <div class="dashboard-container">
+        <!-- Sidebar or Header Header -->
+        <header class="dashboard-header">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; width: 100%; margin-bottom: 0.5rem;">
+                <div class="header-logo">
+                    <span class="pulse-dot"></span>
+                    <h1>Data/IA Jobs Tracker</h1>
+                </div>
+                <a href="../index.html" class="back-portfolio-btn" style="background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.4); border-radius: 8px; color: #818cf8; padding: 0.5rem 1rem; font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease; font-family: 'Outfit', sans-serif;"><i class="fas fa-arrow-left"></i> Retour au Portfolio</a>
+            </div>
+            <p class="subtitle">Analyse en temps réel du marché de l'emploi en France</p>
+        </header>
+
+        <!-- Filters Section -->
+        <section class="filters-card glass-panel">
+            <h2 class="section-title">🔧 Filtres Interactifs</h2>
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label for="filter-role">Métier :</label>
+                    <select id="filter-role" class="filter-select">
+                        <option value="all">Tous les métiers</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-city">Ville :</label>
+                    <select id="filter-city" class="filter-select">
+                        <option value="all">Toutes les villes</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-contract">Contrat :</label>
+                    <select id="filter-contract" class="filter-select">
+                        <option value="all">Tous les contrats</option>
+                    </select>
+                </div>
+                <div class="filter-group reset-group">
+                    <button id="btn-reset" class="btn-primary">Réinitialiser</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPI Cards Grid -->
+        <section class="kpi-grid">
+            <!-- Total Jobs -->
+            <div class="kpi-card glass-panel count-card">
+                <div class="kpi-icon total-icon">💼</div>
+                <div class="kpi-content">
+                    <h3>Offres Analysées</h3>
+                    <div id="kpi-total-jobs" class="kpi-value">0</div>
+                    <span class="kpi-trend">Derniers 30 jours</span>
+                </div>
+            </div>
+            
+            <!-- Average Salary -->
+            <div class="kpi-card glass-panel salary-card">
+                <div class="kpi-icon salary-icon">💶</div>
+                <div class="kpi-content">
+                    <h3>Salaire Moyen (Hors Stages)</h3>
+                    <div id="kpi-avg-salary" class="kpi-value">0 €</div>
+                    <span class="kpi-trend trend-up">Brut annuel équivalent</span>
+                </div>
+            </div>
+            
+            <!-- Top Skill -->
+            <div class="kpi-card glass-panel skill-card">
+                <div class="kpi-icon skill-icon">⚡</div>
+                <div class="kpi-content">
+                    <h3>Compétence Reine</h3>
+                    <div id="kpi-top-skill" class="kpi-value">N/A</div>
+                    <span class="kpi-trend">La plus recherchée</span>
+                </div>
+            </div>
+            
+            <!-- Alternance/Stage Ratio -->
+            <div class="kpi-card glass-panel ratio-card">
+                <div class="kpi-icon ratio-icon">🎓</div>
+                <div class="kpi-content">
+                    <h3>Part Alternance / Stages</h3>
+                    <div id="kpi-ratio" class="kpi-value">0%</div>
+                    <span class="kpi-trend">Tremplin carrières</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Layout Grid -->
+        <main class="charts-grid">
+            <!-- Top Skills -->
+            <div class="chart-container glass-panel lg-col">
+                <h3 class="chart-title">🔥 Top des compétences demandées</h3>
+                <div class="canvas-wrapper">
+                    <canvas id="chart-top-skills"></canvas>
+                </div>
+            </div>
+
+            <!-- Contract distribution -->
+            <div class="chart-container glass-panel">
+                <h3 class="chart-title">📄 Répartition des contrats</h3>
+                <div class="canvas-wrapper doughnut-wrapper">
+                    <canvas id="chart-contracts"></canvas>
+                </div>
+            </div>
+
+            <!-- Salary by Role -->
+            <div class="chart-container glass-panel lg-col">
+                <h3 class="chart-title">💰 Salaire moyen par profil (CDI / Freelance)</h3>
+                <div class="canvas-wrapper">
+                    <canvas id="chart-salary-role"></canvas>
+                </div>
+            </div>
+
+            <!-- Job Distribution by City -->
+            <div class="chart-container glass-panel">
+                <h3 class="chart-title">📍 Répartition géographique</h3>
+                <div class="canvas-wrapper">
+                    <canvas id="chart-cities"></canvas>
+                </div>
+            </div>
+        </main>
+
+        <!-- Job Listings Table & Power BI Notice -->
+        <section class="bottom-section-grid">
+            <!-- Recent Job List -->
+            <div class="job-list-card glass-panel">
+                <h3 class="section-title">👀 Échantillon d'offres récentes</h3>
+                <div class="table-container">
+                    <table class="jobs-table">
+                        <thead>
+                            <tr>
+                                <th>Poste</th>
+                                <th>Entreprise</th>
+                                <th>Ville</th>
+                                <th>Contrat</th>
+                                <th>Salaire</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="jobs-table-body">
+                            <!-- Rempli dynamiquement en JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Power BI integration tip -->
+            <div class="powerbi-card glass-panel">
+                <div class="pbi-logo">📊</div>
+                <h3>Valoriser sur votre CV</h3>
+                <p>Ce pipeline génère un fichier propre <code>cleaned_jobs.csv</code> prêt à l'emploi.</p>
+                <div class="pbi-steps">
+                    <div class="step"><span class="step-num">1</span> Installez Power BI Desktop (gratuit)</div>
+                    <div class="step"><span class="step-num">2</span> Importez <code>cleaned_jobs.csv</code></div>
+                    <div class="step"><span class="step-num">3</span> Créez des filtres par ville et cartes KPI</div>
+                </div>
+                <div class="pbi-tip">
+                    <strong>Astuce :</strong> Présentez ce tableau de bord interactif sur votre GitHub et incluez-le dans votre CV avec un lien pour impressionner les recruteurs !
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <p>Analyse du marché de l'emploi en Data/IA - Réalisé avec Python, Pandas, Chart.js et beaucoup de passion.</p>
+        </footer>
+    </div>
+
+    <!-- Script de données en premier -->
+    <script src="dashboard_data.js"></script>
+    <!-- Script d'interaction principal -->
+    <script src="app.js"></script>
+</body>
+</html>

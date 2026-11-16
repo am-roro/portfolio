@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Jeu de la Cible — BTS SIO SLAM</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0b0c15;
+            --bg-panel: #13141f;
+            --neon-cyan: #00f3ff;
+            --neon-purple: #bd00ff;
+            --sentinel-green: #00ff9d;
+            --text-main: #e0e0e0;
+            --text-dim: #888888;
+            --font-header: 'Orbitron', sans-serif;
+            --font-body: 'Rajdhani', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            padding: 2rem 1.5rem 5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .top-bar {
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.6rem 1.4rem;
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            font-family: var(--font-header);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            background: rgba(0, 243, 255, 0.05);
+        }
+
+        .btn-back:hover {
+            background: var(--neon-cyan);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px var(--neon-cyan);
+        }
+
+        .project-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-header {
+            background: var(--bg-panel);
+            border: 1px solid var(--neon-purple);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 0 25px rgba(189, 0, 255, 0.15);
+            position: relative;
+            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+        }
+
+        .project-tag {
+            color: var(--sentinel-green);
+            font-family: monospace;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-family: var(--font-header);
+            color: var(--neon-cyan);
+            font-size: 2.3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+            margin-bottom: 1rem;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .tech-badges span {
+            background: rgba(0, 243, 255, 0.08);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 4px 12px;
+            font-size: 0.85rem;
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
+        .project-desc {
+            color: var(--text-main);
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--text-dim);
+            padding: 2rem;
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            border-color: var(--neon-cyan);
+        }
+
+        .info-card h2 {
+            font-family: var(--font-header);
+            color: var(--neon-purple);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px dashed var(--neon-purple);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+        }
+
+        .info-card ul li {
+            padding: 0.6rem 0;
+            color: var(--text-dim);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-card ul li strong {
+            color: var(--neon-cyan);
+        }
+
+        .gallery-section-title {
+            font-family: var(--font-header);
+            color: var(--sentinel-green);
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            background: var(--bg-panel);
+            border: 1px solid var(--text-dim);
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 8px 25px rgba(0, 243, 255, 0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.9);
+            transition: filter 0.3s;
+        }
+
+        .gallery-item:hover img {
+            filter: brightness(1.05);
+        }
+
+        .gallery-item .item-title {
+            padding: 0.8rem 1rem;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            background: rgba(11, 12, 21, 0.9);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gallery-item .zoom-icon {
+            color: var(--neon-cyan);
+            font-size: 0.85rem;
+        }
+
+        #imageModal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(11, 12, 21, 0.95);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            backdrop-filter: blur(8px);
+        }
+
+        #fullImg {
+            max-width: 90%;
+            max-height: 80vh;
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 35px rgba(0, 243, 255, 0.4);
+            border-radius: 4px;
+        }
+
+        #caption {
+            margin-top: 20px;
+            color: var(--neon-cyan);
+            font-family: var(--font-header);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            color: var(--neon-purple);
+            font-size: 45px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: var(--neon-cyan);
+        }
+
+        @media (max-width: 800px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <a href="index.html#projects" class="btn-back"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
+        <span style="color: var(--sentinel-green); font-family: monospace;">STATUS: ARCHIVED_PROJECT</span>
+    </div>
+
+    <div class="project-container">
+        
+        <header class="project-header">
+            <div class="project-tag">[PROJET D'APPRENTISSAGE WEB — BTS SIO]</div>
+            <h1>Jeu de la Cible</h1>
+            <div class="tech-badges">
+                <span>HTML5</span>
+                <span>CSS3 (Pur)</span>
+                <span>JavaScript</span>
+                <span>PHP (Sessions &amp; Scores)</span>
+            </div>
+            <p class="project-desc">
+                Projet pédagogique structuré en 11 étapes progressives. Il s'agit d'un jeu de tir interactif où une cible concentrique à 10 zones est entièrement construite en CSS pur (sans image externe). Le jeu calcule précisément le score selon la zone touchée, gère les sessions des joueurs en PHP et stocke un classement dynamique.
+            </p>
+        </header>
+
+        <div class="content-grid">
+            <div class="info-card">
+                <h2>&gt; Conception &amp; Logique de Jeu</h2>
+                <ul>
+                    <li><strong>Cible 100% CSS :</strong> Modélisation de cercles concentriques avec bordures, superpositions et z-index.</li>
+                    <li><strong>Calcul Précis des Points :</strong> Détection de l'événement clic et attribution du score par zone.</li>
+                    <li><strong>Sessions &amp; Classement :</strong> Enregistrement du pseudo du joueur et persistance des scores en PHP.</li>
+                    <li><strong>Gestion des 11 Étapes :</strong> Progression méthodique documentée de l'intégration au backend.</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h2>&gt; Compétences Développées</h2>
+                <ul>
+                    <li><strong>Maîtrise du DOM &amp; Événements :</strong> Manipulation dynamique en JavaScript pur.</li>
+                    <li><strong>Mise en page avancée :</strong> Positionnement absolu, centrage dynamique et styles responsives.</li>
+                    <li><strong>Back-end PHP de base :</strong> Traitement des requêtes POST et persistance via session utilisateur.</li>
+                    <li><strong>Rigueur méthodologique :</strong> Respect strict des étapes du cahier des charges.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="gallery-section-title"><i class="fas fa-images"></i> Captures du Jeu (Cliquer pour agrandir)</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/cible/cible .png" alt="Interface du Jeu de la Cible">
+                <div class="item-title"><span>Interface Cible</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/project_4.png" alt="Rendu et code du projet">
+                <div class="item-title"><span>Rendu Visuel</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Lightbox Zoom Modal -->
+    <div id="imageModal">
+        <span class="close-btn" onclick="closeZoom()">&times;</span>
+        <img id="fullImg" src="" alt="">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("fullImg");
+        const captionText = document.getElementById("caption");
+
+        function openZoom(itemElement) {
+            const img = itemElement.querySelector('img');
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+        }
+
+        function closeZoom() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeZoom();
+            }
+        };
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") closeZoom();
+        });
+    </script>
+</body>
+</html>

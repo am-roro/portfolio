@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet PharmaSI — BTS SIO SLAM</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0b0c15;
+            --bg-panel: #13141f;
+            --neon-cyan: #00f3ff;
+            --neon-purple: #bd00ff;
+            --sentinel-green: #00ff9d;
+            --text-main: #e0e0e0;
+            --text-dim: #888888;
+            --font-header: 'Orbitron', sans-serif;
+            --font-body: 'Rajdhani', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            padding: 2rem 1.5rem 5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .top-bar {
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.6rem 1.4rem;
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            font-family: var(--font-header);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            background: rgba(0, 243, 255, 0.05);
+        }
+
+        .btn-back:hover {
+            background: var(--neon-cyan);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px var(--neon-cyan);
+        }
+
+        .project-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-header {
+            background: var(--bg-panel);
+            border: 1px solid var(--neon-purple);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 0 25px rgba(189, 0, 255, 0.15);
+            position: relative;
+            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+        }
+
+        .project-tag {
+            color: var(--sentinel-green);
+            font-family: monospace;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-family: var(--font-header);
+            color: var(--neon-cyan);
+            font-size: 2.3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+            margin-bottom: 1rem;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .tech-badges span {
+            background: rgba(0, 243, 255, 0.08);
+            border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            padding: 4px 12px;
+            font-size: 0.85rem;
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
+        .project-desc {
+            color: var(--text-main);
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--text-dim);
+            padding: 2rem;
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            border-color: var(--neon-cyan);
+        }
+
+        .info-card h2 {
+            font-family: var(--font-header);
+            color: var(--neon-purple);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px dashed var(--neon-purple);
+            padding-bottom: 0.5rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+        }
+
+        .info-card ul li {
+            padding: 0.6rem 0;
+            color: var(--text-dim);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-card ul li strong {
+            color: var(--neon-cyan);
+        }
+
+        .gallery-section-title {
+            font-family: var(--font-header);
+            color: var(--sentinel-green);
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            background: var(--bg-panel);
+            border: 1px solid var(--text-dim);
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 8px 25px rgba(0, 243, 255, 0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.9);
+            transition: filter 0.3s;
+        }
+
+        .gallery-item:hover img {
+            filter: brightness(1.05);
+        }
+
+        .gallery-item .item-title {
+            padding: 0.8rem 1rem;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            background: rgba(11, 12, 21, 0.9);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gallery-item .zoom-icon {
+            color: var(--neon-cyan);
+            font-size: 0.85rem;
+        }
+
+        #imageModal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(11, 12, 21, 0.95);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            backdrop-filter: blur(8px);
+        }
+
+        #fullImg {
+            max-width: 90%;
+            max-height: 80vh;
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 35px rgba(0, 243, 255, 0.4);
+            border-radius: 4px;
+        }
+
+        #caption {
+            margin-top: 20px;
+            color: var(--neon-cyan);
+            font-family: var(--font-header);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 25px;
+            right: 40px;
+            color: var(--neon-purple);
+            font-size: 45px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: var(--neon-cyan);
+        }
+
+        @media (max-width: 800px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <a href="index.html#projects" class="btn-back"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
+        <span style="color: var(--sentinel-green); font-family: monospace;">STATUS: ARCHIVED_PROJECT</span>
+    </div>
+
+    <div class="project-container">
+        
+        <header class="project-header">
+            <div class="project-tag">[PROJET BTS SIO SLAM — E4 / E5]</div>
+            <h1>Application PharmaSI</h1>
+            <div class="tech-badges">
+                <span>C# Windows Forms</span>
+                <span>Base de Données MySQL</span>
+                <span>Modélisation Relationnelle (MCD / MLD)</span>
+                <span>Gestion des Droits (RBAC)</span>
+                <span>Requêtes SQL Complexes</span>
+            </div>
+            <p class="project-desc">
+                PharmaSI est un système d'information complet développé en C# connecté à une base MySQL. Il permet la gestion et le suivi des visites médicales d'un laboratoire pharmaceutique : planification des rendez-vous des praticiens, enregistrement des comptes-rendus de visite, présentation et distribution d'échantillons de médicaments, avec des niveaux d'accès sécurisés (Visiteurs, Délégués régionaux, Responsables).
+            </p>
+        </header>
+
+        <div class="content-grid">
+            <div class="info-card">
+                <h2>&gt; Modélisation Relationnelle &amp; SQL</h2>
+                <ul>
+                    <li><strong>MCD / MLD :</strong> Conception des liaisons entre Visiteurs, Praticiens, Spécialités et Médicaments.</li>
+                    <li><strong>Contrôle d'Accès Sécurisé (RBAC) :</strong> Écrans dédiés selon le rôle utilisateur authentifié.</li>
+                    <li><strong>Rapports de Visite :</strong> Saisie, modification et archivage des comptes-rendus d'entretiens.</li>
+                    <li><strong>Gestion des Praticiens :</strong> Fiches détaillées avec coefficient de notoriété et historique des contacts.</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h2>&gt; Gestion Médicale &amp; Reporting</h2>
+                <ul>
+                    <li><strong>Catalogue Médicaments :</strong> Fiches techniques, dosage, familles et contre-indications.</li>
+                    <li><strong>Échantillons Médicaux :</strong> Suivi des quantités présentées et distribuées aux médecins.</li>
+                    <li><strong>Supervision Hiérarchique :</strong> Tableaux de bord pour délégués régionaux et responsables nationaux.</li>
+                    <li><strong>Contrôle de Saisie :</strong> Validation et cohérence des données saisies dans l'application C#.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="gallery-section-title"><i class="fas fa-images"></i> Captures de l'Application (Cliquer pour agrandir)</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/pharmasi/pharmasi1.png" alt="Écran d'authentification PharmaSI">
+                <div class="item-title"><span>Authentification</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/pharmasi/inter_graph.png" alt="Interface graphique principale">
+                <div class="item-title"><span>Menu Principal</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/pharmasi/form_visi.png" alt="Fiche formulaire visiteur">
+                <div class="item-title"><span>Fiche Visiteur</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/pharmasi/form_prat.png" alt="Formulaire de gestion des praticiens">
+                <div class="item-title"><span>Fiche Praticien</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/pharmasi/form_prod.png" alt="Formulaire des produits et médicaments">
+                <div class="item-title"><span>Médicaments</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/pharmasi/form_rapport.png" alt="Saisie et consultation d'un rapport de visite">
+                <div class="item-title"><span>Rapport de Visite</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/pharmasi/del_regio.png" alt="Espace délégué régional">
+                <div class="item-title"><span>Délégué Régional</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/pharmasi/respon_acc.png" alt="Espace responsable du secteur">
+                <div class="item-title"><span>Responsable Secteur</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/pharmasi/pharmasi2.png" alt="Consultation des rapports archivés">
+                <div class="item-title"><span>Consultation Rapports</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/pharmasi/pharmasi3.png" alt="Tableau de bord de gestion">
+                <div class="item-title"><span>Tableau de Bord</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/pharmasi/pharmasi4.png" alt="Détail des praticiens et spécialités">
+                <div class="item-title"><span>Spécialités Praticiens</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+            <div class="gallery-item" onclick="openZoom(this)">
+                <img src="images/pharmasi/form_del.png" alt="Gestion des délégations régionales">
+                <div class="item-title"><span>Fiche Délégation</span><i class="fas fa-search-plus zoom-icon"></i></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Lightbox Zoom Modal -->
+    <div id="imageModal">
+        <span class="close-btn" onclick="closeZoom()">&times;</span>
+        <img id="fullImg" src="" alt="">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("fullImg");
+        const captionText = document.getElementById("caption");
+
+        function openZoom(itemElement) {
+            const img = itemElement.querySelector('img');
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+        }
+
+        function closeZoom() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeZoom();
+            }
+        };
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") closeZoom();
+        });
+    </script>
+</body>
+</html>
